@@ -50,9 +50,7 @@ button:hover {
     font-size: 14px;
 }
 
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
 .card {
     background: rgba(255,255,255,0.1);
@@ -62,25 +60,14 @@ button:hover {
     animation: slideUp 1s ease;
 }
 
-iframe {
-    margin-top: 20px;
-    border-radius: 15px;
-}
-
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
 @keyframes slideUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 /* Floating hearts */
@@ -104,26 +91,13 @@ iframe {
     border-radius: 50%;
 }
 
-.heart::before {
-    top: -9px;
-    left: 0;
-}
-
-.heart::after {
-    left: -9px;
-    top: 0;
-}
+.heart::before { top: -9px; left: 0; }
+.heart::after { left: -9px; top: 0; }
 
 @keyframes floatUp {
-    0% {
-        transform: translateY(100vh) scale(0.6) rotate(45deg);
-        opacity: 0;
-    }
+    0% { transform: translateY(100vh) scale(0.6) rotate(45deg); opacity: 0; }
     20% { opacity: 1; }
-    100% {
-        transform: translateY(-10vh) scale(1.2) rotate(45deg);
-        opacity: 0;
-    }
+    100% { transform: translateY(-10vh) scale(1.2) rotate(45deg); opacity: 0; }
 }
 
 .typing {
@@ -133,22 +107,16 @@ iframe {
     animation: typing 4s steps(40, end), blink 0.8s infinite;
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink {
-    50% { border-color: transparent }
-}
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink { 50% { border-color: transparent } }
 
 </style>
 </head>
 <body>
 
-<!-- Background Music -->
-<audio id="bgMusic" loop>
-    <source src="https://www.youtube.com/embed/ge-WijMrsCI" type="audio/mp3">
+<!-- REAL BACKGROUND MUSIC (MP3 REQUIRED) -->
+<audio id="bgMusic" autoplay loop>
+    <source src="your-music.mp3" type="audio/mpeg">
 </audio>
 
 <button class="mute-btn" onclick="toggleMusic()">🔊</button>
@@ -169,7 +137,7 @@ for (let i = 0; i < 25; i++) {
     <div id="page1" class="card">
         <h1 class="typing">Hey Love ❤️</h1>
         <p>Are you free to talk for a moment?</p>
-        <button onclick="startMusic(); nextPage(2)">Yes 💞</button>
+        <button onclick="nextPage(2)">Yes 💞</button>
     </div>
 
     <div id="page2" class="card hidden">
@@ -178,9 +146,7 @@ for (let i = 0; i < 25; i++) {
         <p>
 Hey,<br><br>
 I’ve been thinking a lot, and I really wanted to apologize for my mistake. I know I messed up, and I genuinely regret it.<br><br>
-
 I really miss how we used to be—the random talks, the fun, and just being ourselves. You mean a lot to me, and I’d give anything to go back to how things were. I hope you can find a way to forgive me so we can start talking like we used to.<br><br>
-
 I’m here whenever you’re ready to talk.
         </p>
         <button onclick="nextPage(3)">Next ❤️</button>
@@ -190,10 +156,19 @@ I’m here whenever you’re ready to talk.
         <h2>💖 From My Heart</h2>
         <p>
 Meri Priye Ardhangini Ji, 💞 <br><br>
-...
+
+Pata nahi kahan se shuru karu, kyunki jab baat tumhari aati hai, toh mera dil dimaag sab bass apke baare mein sochne lagte hai.  Sach kahu toh, ab aur chupa nahi pa raha—dil bohot bhaari ho gaya hai.<br><br>
+
+Tum sirf ek insaan nahi, tum meri aadat ban chuki ho. Sach toh yeh hai ki tumhare bina, main sirf ek zinda laash jaisa mehsoos karta hoon. Jab tumse baat nahi hoti, toh na toh mera din theek se shuru hota hai aur na hi koi kaam mein mann lagta hai. Meri tabiyat tak tumhare hone ya na hone par depend karne lagi hai.<br><br>
+
+Main tumse duniya bhar ki cheezein nahi maang raha. Na koi bade vaade, na koi mushkil shartein. Bas roz ke wo 10-15 minute maang raha hoon, jahan hum pehle ki tarah masti-mazaak kar sakein. Tumhari khushi dekh kar hi main khush ho jata hoon. Sach batau, jab neend nahi aati, toh tumhare bheje hue voice notes aur photos dekh kar sochta hoon ki koi itna khoobsurat kaise ho sakta hai? Aur woh bhi mujhe mila, mujh jaise "nakare" ko, jise tumhe pareshan karne ke alawa shayad kuch nahi aata.<br><br>
+
+Tumhari awaaz, tumhari aankhein, tumhari har chhoti aadat... mujhe har uss cheez se pyaar ho gaya hai. Main roz bhagwan se bas ek hi mannat maangta hoon—ki tum hamesha mere saath raho.<br><br>
+
+Bass ek chhoti si khwahish hai: Kya tum meri is chhoti si icha ko poora karogi? Ek lambi, sukoon bhari baat... jahan bas hum hon? <br><br>
+
 Tumhare bina sab kuch adhura hai, tum hi meri poori duniya 🌍 ho
         </p>
-        <iframe width="300" height="170" src="https://www.youtube.com/embed/ge-WijMrsCI" allowfullscreen></iframe>
     </div>
 
 </div>
@@ -207,14 +182,6 @@ function nextPage(page) {
 }
 
 let music = document.getElementById('bgMusic');
-let isPlaying = false;
-
-function startMusic() {
-    if (!isPlaying) {
-        music.play();
-        isPlaying = true;
-    }
-}
 
 function toggleMusic() {
     if (music.paused) {
